@@ -1,7 +1,8 @@
 from fastapi import FastAPI
-from database import get_database
+from app.db.connection import get_database
+from app import __version__, __title__
 
-app = FastAPI()
+app = FastAPI(title=__title__, version=__version__)
 
 # Initialize database connection
 db = get_database()
