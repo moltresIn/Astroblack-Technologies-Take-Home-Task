@@ -7,7 +7,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./app:/code/app  # Maps local app directory to container app directory
+      - .:/code
     depends_on:
       - mongodb
     environment:
