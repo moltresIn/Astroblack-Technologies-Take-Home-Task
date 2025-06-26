@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 from app.routers import items_router, consumption_router, restock_router
 from app import __version__, __title__
-from app.db.connection import get_database
+from app.db import get_database
 
 app = FastAPI(title=__title__, version=__version__)
 

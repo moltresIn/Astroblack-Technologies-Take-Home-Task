@@ -5,7 +5,7 @@ import os
 load_dotenv()
 
 
-def get_database():
+def create_database_connection():
     try:
         mongo_uri = os.getenv("MONGODB_URI", "mongodb://mongodb:27017")
         db_name = os.getenv("MONGODB_DB_NAME", "Testing")
