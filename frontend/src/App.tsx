@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState } from "react";
+import React, { useState } from "react";
 import { Package, BarChart3, Plus, Activity } from "lucide-react";
 import { Dashboard } from "./components/Dashboard";
 import { AddItemModal } from "./components/AddItemModal";
@@ -146,6 +146,7 @@ function App() {
         isOpen={isAddModalOpen}
         onClose={() => setIsAddModalOpen(false)}
         onAdd={handleAddItemSubmit}
+        existingItems={items}
       />
     </div>
   );

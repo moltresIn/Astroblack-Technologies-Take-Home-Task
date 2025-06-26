@@ -29,6 +29,7 @@ export const useInventory = () => {
       const alerts = await apiService.getRestockAlerts();
       setRestockAlerts(alerts);
     } catch (err) {
+      setError('Failed to fetch restock alerts');
       console.error('Error fetching restock alerts:', err);
     }
   }, []);
