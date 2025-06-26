@@ -1,0 +1,25 @@
+version: "3.13"
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/code/app  # Maps local app directory to container app directory
+    depends_on:
+      - mongodb
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017
+      - MONGODB_DB_NAME=Testing
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27018:27017"  # Maps host 27018 to container 27017
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
