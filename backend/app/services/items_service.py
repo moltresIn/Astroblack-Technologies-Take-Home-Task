@@ -47,11 +47,19 @@ async def list_items_service(request: Request):
     items = []
     for item in items_collection.find():
         item = convert_objectid_to_str(item)
-        status = "In Stock" if item['quantity'] > 0 else "Out of Stock"
+        if item['quantity'] <= 0:
+            status = "out-of-stock"
+        elif item['quantity'] <= item['restock_threshold']:
+            status = "low-stock"
+        else:
+            status = "in-stock"
+
         items.append({
             "_id": item['_id'],
             "name": item['name'],
             "quantity": item['quantity'],
-            "status": status
+            "status": status,
+            "restock_threshold": item['restock_threshold'],
+            "daily_consumption": item['daily_consumption']
         })
     return items
