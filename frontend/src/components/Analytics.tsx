@@ -376,11 +376,6 @@ export const Analytics: React.FC<AnalyticsProps> = ({
                     {alert.days_until_depletion} days until depletion
                   </p>
                 </div>
-                <div className="text-right">
-                  <div className="text-lg font-semibold text-amber-800">
-                    Order: {alert.recommended_order_quantity}
-                  </div>
-                </div>
               </div>
             ))}
           </div>
