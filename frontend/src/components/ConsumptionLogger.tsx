@@ -164,7 +164,7 @@ export const ConsumptionLogger: React.FC<ConsumptionLoggerProps> = ({
                   onChange={(e) =>
                     handleInputChange("item_name", e.target.value)
                   }
-                  className={`w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white ${
+                  className={`w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-1 focus:ring-blue-500 focus:border-transparent appearance-none bg-white ${
                     errors.item_name ? "border-red-300" : "border-gray-300"
                   }`}
                 >
@@ -202,7 +202,7 @@ export const ConsumptionLogger: React.FC<ConsumptionLoggerProps> = ({
                   value={formData.date}
                   onChange={(e) => handleInputChange("date", e.target.value)}
                   max={format(new Date(), "yyyy-MM-dd")}
-                  className={`w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                  className={`w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-1 focus:ring-blue-500 focus:border-transparent ${
                     errors.date ? "border-red-300" : "border-gray-300"
                   }`}
                 />
@@ -229,7 +229,7 @@ export const ConsumptionLogger: React.FC<ConsumptionLoggerProps> = ({
               onChange={(e) =>
                 handleInputChange("quantity_used", e.target.value)
               }
-              className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+              className={`w-full px-3 py-2 border rounded-lg focus:ring-1 focus:ring-blue-500 focus:border-transparent ${
                 errors.quantity_used ? "border-red-300" : "border-gray-300"
               }`}
               placeholder="Enter quantity used"
@@ -255,7 +255,7 @@ export const ConsumptionLogger: React.FC<ConsumptionLoggerProps> = ({
                 value={formData.notes}
                 onChange={(e) => handleInputChange("notes", e.target.value)}
                 rows={3}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-blue-500 focus:border-transparent resize-none"
                 placeholder="Add any additional notes about this usage..."
               />
             </div>
